@@ -1,0 +1,24 @@
+{
+  "name": "langchain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/chatbot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "@huggingface/transformers": "^3.7.2",
+    "@langchain/community": "^0.3.54",
+    "@langchain/core": "^0.3.74",
+    "@langchain/ollama": "^0.2.4",
+    "chromadb": "^3.0.14",
+    "dotenv": "^16.6.1",
+    "langchain": "^0.3.33",
+    "ollama": "^0.5.17"
+  }
+}

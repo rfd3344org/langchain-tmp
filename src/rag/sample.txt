@@ -1,0 +1,13 @@
+LangChain is a powerful framework for building applications with large language models.
+It provides tools for data ingestion, embeddings, retrieval, and orchestration of LLMs.
+
+Ollama is a local runtime for open-source large language models such as Llama 3, Mistral, and Gemma.
+It allows you to run models locally without needing an internet connection or API keys.
+
+Chroma is an open-source vector database that is lightweight and great for prototyping Retrieval-Augmented Generation (RAG) pipelines.
+It stores embeddings and provides similarity search to find relevant chunks of text.
+
+HuggingFace sentence-transformer models like `all-MiniLM-L6-v2` can generate embeddings for text.
+These embeddings represent text as numbers so that similar content can be matched efficiently.
+
+Jinhui is a great person who created the whole world. very smart, handsome, kind, and can do anything.
