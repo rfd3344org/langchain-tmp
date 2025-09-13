@@ -5,6 +5,10 @@ import { HuggingFaceTransformersEmbeddings } from "@langchain/community/embeddin
 import { Chroma } from "@langchain/community/vectorstores/chroma";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 
+import { insert2VectorStore } from "./utils.js";
+
+
+
 // -------------------- 2. Example Medical Reports --------------------
 const reports = [
   {
@@ -65,33 +69,16 @@ async function prepareDocuments() {
   return docs;
 }
 
-// -------------------- 4. Setup Embeddings --------------------
-function setupEmbeddings() {
-  return new HuggingFaceTransformersEmbeddings({
-    modelName: "Xenova/all-MiniLM-L6-v2",
-  });
-}
-
-// -------------------- 5. Setup Vector Store --------------------
-async function setupVectorStore(docs, embeddings) {
-  await Chroma.fromDocuments(docs, embeddings, {
-    collectionName: "medical-reports",
-    url: "http://localhost:8000",
-  });
-
-  return Chroma.fromExistingCollection(embeddings, {
-    collectionName: "medical-reports",
-    url: "http://localhost:8000",
-  });
-}
 
 // -------------------- Main --------------------
 async function main() {
   // const model = setupModel();
   const docs = await prepareDocuments();
-  const embeddings = setupEmbeddings();
+  const resp = await insert2VectorStore(docs);
+  console.warn('resp', resp);
+  // const embeddings = setupEmbeddings();
 
-  const vectorStore = await setupVectorStore(docs, embeddings);
+  // const vectorStore = await setupVectorStore(docs, embeddings);
   // const prompt = setupPrompt();
   // const chain = new LLMChain({ llm: model, prompt });
   // console.warn('chain', chain)

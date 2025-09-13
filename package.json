@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/chatbot.js",
-    "medical-report": "node src/medical-report/query.js",
+    "medical-ingestion": "node src/medical-report/data-ingestion.js",
+    "medical-query": "node src/medical-report/query.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-
   "license": "ISC",
   "dependencies": {
     "@huggingface/transformers": "^3.7.2",

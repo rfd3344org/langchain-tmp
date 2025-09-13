@@ -23,11 +23,13 @@ function setupEmbeddings() {
   });
 }
 
+const collectionName = "medical-reports2";
+const vectorStoreUrl = "http://localhost:8000";
 export async function insert2VectorStore(docs) {
   const embeddings = setupEmbeddings();
   const resp = await Chroma.fromDocuments(docs, embeddings, {
-    collectionName: "medical-reports",
-    url: "http://localhost:8000",
+    collectionName,
+    url: vectorStoreUrl,
   });
   return resp;
 }
@@ -35,8 +37,8 @@ export async function insert2VectorStore(docs) {
 export function loadVectorStore() {
   const embeddings = setupEmbeddings();
   return Chroma.fromExistingCollection(embeddings, {
-    collectionName: "medical-reports",
-    url: "http://localhost:8000",
+    collectionName,
+    url: vectorStoreUrl,
   });
 }
 
